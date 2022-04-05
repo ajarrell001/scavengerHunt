@@ -1,0 +1,28 @@
+{
+    "landmarks": [
+                    {
+                        "name" : "Liberty Bell",
+                        "id" : 0,
+                        "image" : "images/libertyBell.jpeg",
+                        "lat" : "39.94987347338062",
+                        "lon" : "-75.14985294852438",
+                        "clue" : "One of the most iconic, this Philadelphia landmark has what is now considered to be a misspelling on it."
+                    },
+                    {
+                        "name" : "Reading Terminal Market",
+                        "id" : 1,
+                        "image" : "images/readingTerminal.jpg",
+                        "lat" : "39.953484396130676", 
+                        "lon" : "-75.15946890842216",
+                        "clue" : "From chocolate body parts to cheesesteak pretzels, this Philadelphia market has something for everyone."
+                    },
+                    {
+                        "name" : "Rittenhouse Square Park",
+                        "id" : 2,
+                        "image" : "images/rittenhouse.jpeg",
+                        "lat" : "39.9497778731137", 
+                        "lon" : "-75.17148653491128",
+                        "clue" : "Whether you want to relax on a bench, have a picnic, or hold a duck, this original Philadelphia park will be sure to be a lovely time."
+                    }
+    ]
+}

@@ -1,0 +1,228 @@
+/* Alyssa Jarrell
+  CIS 228 - JS 2
+  Prof. Liss
+  Spring 2022
+  jnum: J00362041
+*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y:scroll;
+  font-family:monospace;
+  font-size: 13pt;
+  color: rgba(0, 0, 0, 0.9);
+  background-image: url("images/bg2.png");
+}
+
+.show {
+  display: block;
+}
+
+.noShow{
+  display: none;
+}
+
+#gameInfoContainer {
+  width: 100%;
+}
+
+#map {
+  height: 250px;
+  width: 100%;
+  border: 2px inset rgba(0,0,0,.4);
+}
+
+/* grid handling based on screen size */
+@media (min-width: 0px)  {
+  #gameInfo {
+    margin-left: 3%;
+    margin-right: 3%;
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "tracking"
+    "instructions"
+    "clues"
+    "progress"
+    "map";
+  }
+  #progressSpot{
+    background-color: rgba(177, 219, 203, 0.8);
+  }
+}
+
+@media (min-width: 550px) {
+  #gameInfo {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    grid-template-areas:
+    " tracking tracking "
+    " instructions instructions "
+    " clues progress "
+    " map map ";
+  }
+  #progressSpot{
+    background-color: rgba(177, 219, 203, 0.5);
+  }
+}
+
+@media (min-width: 900px) {
+  #gameInfo {
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    grid-template-rows: auto minmax(100px, 2fr);
+    grid-template-areas:
+      " tracking tracking tracking "
+      " instructions clues progress "
+      " map map map ";
+  }
+  #progressSpot{
+    background-color: rgba(177, 219, 203, 0.8);
+  }
+}
+
+/* if no progress made in game, animation will play "Nothing yet...." */
+#noProgress {
+  overflow: hidden;
+  /* font-size: 1rem; */
+  width: 0;
+  white-space: nowrap;
+  animation: typing 2s steps(20, end) forwards;
+  animation-iteration-count: infinite;
+}
+.noProgressContainer {
+  display: inline-block;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+/* end animation rules */
+
+#win{
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#progressSpot, #instructionsSpot, #clueSpot, #trackingSpot {
+  display: flex;
+  justify-content: center;
+  border: 2px inset rgba(0, 0, 0, 0.2);
+}
+
+#progressSpot{
+  grid-area: progress;
+}
+
+#instructionsSpot {
+  grid-area: instructions;
+  background-color: rgba(177, 219, 203, 0.8);
+}
+
+#instructions, #clues, #progress, #tracking, #screenTitle, #congratsHeader{
+  text-align: center;
+}
+
+.instructions, #currentClueSpot, #noProgress {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+
+#message, #distance {
+  margin: 10px;
+}
+
+#clueSpot {
+  grid-area: clues;
+
+}
+
+#trackingSpot, #clueSpot {
+  background-color: rgba(177, 219, 203, 0.5);
+}
+
+#trackingSpot {
+  grid-area: tracking;
+}
+
+#clueSpotText, #instructionsSpotText, #trackingSpotText, #progressSpotText {
+  background-size: cover;
+  margin: 8px;
+} 
+
+#refreshButton{
+  display: block;
+}
+
+
+
+#nextLandmarkButton, #trackingButton, #refreshButton {
+  margin: auto;
+  padding: 20px;
+  background-color: rgba(82, 176, 189, 0.4);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  color: black;
+  font-family: monospace;
+  font-size: 15pt;
+}
+
+#trackingButton:hover, #nextLandmarkButton:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#nextLandmarkButton {
+  display: block;
+  grid-area: button;
+}
+
+.congrats{
+  display:block;
+}
+
+#congrats {
+  background-color: rgba(177,214,219, 0.5);
+  margin: 5%;
+  padding: 30px;
+}
+
+#congratsMessageDiv{
+  max-width: 100%;
+  margin: auto;
+  overflow: visible;
+  display: grid;
+  gap: 5px;
+  grid-template-areas: 
+    "message"
+    "image"
+    "button";
+}
+
+#congratsMessage{
+  text-align: center;
+  display: block;
+  grid-area: message;
+
+}
+
+#landmarkImg {
+  margin: auto;
+  background: #EFEFEF;
+  border: 1px solid rgba(0,0,0,.1);
+  padding: 10px;
+  width: 95%;
+  object-fit: contain;
+  grid-area: image;
+}
+
+
+
+#map {
+  grid-area: map;
+  margin: auto;
+}
+
+footer{
+  text-align: center;
+  margin: auto;
+  }

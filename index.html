@@ -1,0 +1,72 @@
+<!-- Alyssa Jarrell
+  CIS 228 - JS 2
+  Prof. Liss
+  Spring 2022
+  jnum: J00362041 -->
+
+
+<!DOCTYPE html>     
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width">
+    <title>Scavenger Hunt</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='leaflet/leaflet.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+    <script src='leaflet/leaflet.js'></script>
+    <script src='script.js'></script>
+</head>
+<body>
+
+    <h1 id ="screenTitle">Scavenger Hunt</h1> 
+
+
+  <div id = "gameInfoContainer" class = "show">
+    <section id = "gameInfo">  
+        <div id = "instructionsSpot">
+          <div id="instructionsSpotText">
+            <h2 id="instructions">Instructions</h2>
+            <p class="instructions">You have begun the scavenger hunt set within the city of Philadelphia. There are three landmark locations you must visit to win the game. You will start with one clue for the first landmark. Once you find a landmark, you will get a message and a clue for the next landmark. Once you have successfully found the third landmark, you win the game. When you are ready to go to the location, turn on tracking.
+            </p>
+          </div>
+        </div>
+      
+        <div id="clueSpot">
+          <div id="clueSpotText">
+            <h2 id="clues">Current Clue</h2>
+            <p id = "currentClueSpot"></p>
+            <ul id="clueList" class="list"></ul>
+          </div>  
+        </div>
+
+        <div id = "trackingSpot">
+          <div id="trackingSpotText">
+            <h2 id="tracking">Tracking Information</h2>
+            <button id="trackingButton" class = "show">Start Tracking</button>
+            <p id="message"></p>
+            <p id="distance"></p>
+          </div>
+      </div>
+
+      <div id = "progressSpot">
+        <div id="progressSpotText">
+          <h2 id="progress">Landmarks Found</h2>
+          <div id = "noProgressContainer">
+            <p id = "noProgress">Nothing yet.........</p>
+          </div>
+          <ol id="progressInfo" class="list">
+          </ol>
+        </div>
+      </div>
+
+      <div id="map"></div>
+    </section>        
+  </div>
+
+  <div id="congrats" class = "noShow"></div>
+        
+  <br><br><footer>Alyssa Jarrell, CIS 228, Prof. Liss, Spring 2022</footer>
+
+
+</body>
+</html>
