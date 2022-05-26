@@ -5,11 +5,7 @@
   jnumber: J00362041
 */
 
-/////////////////////// PROJECT INFORMATION ////////////////////
-/* This project is a scavenger hunt set in Philadelphia. There are three landmarks for the user to visit, each with their own clue. This data is contained in a json file, which is accessed and stored in the local storage. The game is tracked by game state, starting at 0, which is also added to local storage. When the user finds a landmark, the game state will be updated to 1, then 2, and when they have found the last landmark, the state will update to a final state of 3. A state of 0 is no landmarks found, a state of 3 is all landmarks found ---> win. To find a landmark, the user must turn on location tracking and use the clue to figure out the landmark. Each landmark has a 10 meter geofence around it. Once the user has come within 10 meters of the landmark, they have found it. The map will update with markers for each landmark found and the website will update the clue, tracking, and landmarks found information depending on the state of the game. The user has to option to turn location tracking on or off to save power/memory, but must turn it on when close to the landmark in order to find it. */
-
 'use strict';
-
 
 //////////////////////// GLOBAL VARIABLES ///////////////////////
 ////////////////////////////////////////////////////////////////
@@ -320,12 +316,14 @@ function turnTrackingOn() { // turns on location tracking
                   maximumAge: 1000*30 };
   watchID = navigator.geolocation.watchPosition(showPositionOnMap, err, options); // callback to showPositionOnMap
   document.querySelector('#trackingButton').textContent = 'Stop Tracking';
+  document.querySelector('#trackingButton').style.backgroundColor = "rgba(255, 255, 255, 0.5)";
 }
 
 function turnTrackingOff() { // turns off location tracking
   isTracking = false;
   navigator.geolocation.clearWatch(watchID);
   document.querySelector('#trackingButton').textContent = 'Start Tracking';
+  document.querySelector('#trackingButton').style.backgroundColor = "rgba(82, 176, 189, 0.4)";
 }
   
 function toggleTracking() { // toggles tracking on/off when trackingButton is clicked
